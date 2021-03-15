@@ -8,7 +8,10 @@ const credentials = {
 };
 
 (async () => {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({
+        headless: false,
+        args: ['--headless']
+    })
 
     const page = await browser.newPage()
     await page.goto("https://dogehouse.tv")
